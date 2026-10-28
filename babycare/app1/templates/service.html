@@ -1,0 +1,48 @@
+{% extends "nav.html" %}
+{% load static %}
+{% block content%}
+
+               <!-- Services Start -->
+        <div class="container-fluid program  py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px;">
+                    <h4 class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">Our Childcare Services</h4>
+                    <h1 class="mb-5 display-3">Services Designed for Your Child's Care</h1>
+                </div>
+                <div class="row g-5 justify-content-center">
+                    {% for i in service_data %}
+                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="program-item rounded">
+                            <div class="program-img position-relative">
+                                <div class="overflow-hidden img-border-radius">
+                                    <img src="{{ i.img.url}}" class="img-fluid w-100" alt="Image">
+                                </div>
+                                {% comment %} <div class="px-4 py-2 bg-primary text-white program-rate">{{i.price}}</div> {% endcomment %}
+                            </div>
+                            <div class="program-text bg-white px-4 pb-3">
+                                <div class="program-text-inner">
+                                    <a href="{% url "team" i.id%}" class="h4">{{i.title}}</a>
+                                    <p class="mt-3 mb-0">{{i.description}}</p>
+                                </div>
+                            </div>
+                            {% comment %} <div class="program-teacher d-flex align-items-center border-top border-primary bg-white px-4 py-3">
+                                <img src="{% static 'img/program-teacher.jpg' %}" class="img-fluid rounded-circle p-2 border border-primary bg-white" alt="Image" style="width: 70px; height: 70px;">
+                                <div class="ms-3">
+                                    <h6 class="mb-0 text-primary">Mary Mordern</h6>
+                                    <small>Arts Designer</small>
+                                </div>
+                            </div> {% endcomment %}
+                            {% comment %} <div class="d-flex justify-content-between px-4 py-2 bg-primary rounded-bottom">
+                                <small class="text-white"><i class="fas fa-wheelchair me-1"></i> 30 Sits</small>
+                                <small class="text-white"><i class="fas fa-book me-1"></i> 11 Lessons</small>
+                                <small class="text-white"><i class="fas fa-clock me-1"></i> 60 Hours</small>
+                            </div> {% endcomment %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div> 
+            </div>
+        </div>
+        <!-- Services End -->
+{% endblock content%}

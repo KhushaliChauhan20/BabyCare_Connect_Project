@@ -1,0 +1,3 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+16:14:17	7068/7068	---MCZ	403	error ('Forbidden')	text/html	date:Wed,%2011%20Mar%202026%2010:44:15%20GMT	https://preview.themeforest.net/item/bcare-baby-care-services-elementor-template-kit/full_screen_preview/34392921	D:/MCA/python/BabyCare_Connect/babycare/preview.themeforest.net/item/bcare-baby-care-services-elementor-template-kit/full_screen_preview/34392921.0.delayed	(from )
+16:14:18	47/47	---MCZ	200	added ('OK')	text/plain	etag:%2269b12d11-1b%22	https://preview.themeforest.net/robots.txt		(from )

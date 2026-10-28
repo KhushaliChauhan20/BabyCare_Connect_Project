@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from colorlib.com/etc/regform/colorlib-regform-7/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Mar 2026 07:14:53 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+<meta name="robots" content="noindex, follow">
+{% if saved %}
+<script>
+    alert("{{saved}}");
+</script>
+{% endif %}
+{% if registered %}
+<script>alert("{{registered}}")</script>
+{% endif %}
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Sign up</h2>
+                        <form action="" method="POST" class="register-form" id="register-form">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="name" id="name" placeholder="Your Name" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="pass" id="pass" placeholder="Password" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" required/>
+                            </div>
+                             <div class="form-group">
+                                <label for="mobile"><i class="zmdi zmdi-phone"></i></label>
+                                <input type="text" name="mobile" id="mobile" placeholder="Enter your mobile number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address"><i class="zmdi zmdi-home"></i></label>
+                                <input type="textarea" name="address" id="address" placeholder="Enter your address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="children"><i class="zmdi zmdi-accounts"></i></label>
+                                <input type="number" name="children" id="children" placeholder="Number of Children" min="1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="child_age"><i class="zmdi zmdi-face"></i></label>
+                                <input type="text" name="child_age" id="child_age" placeholder="Enter ages (optional) (e.g., 5, 8, 10)" >
+                            </div>
+                               <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="{% static 'img/reg-img/signup-image.png' %}" alt="sing up image"></figure>
+                        <a href="/login/" class="signup-image-link">I am already member</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+<!-- Mirrored from colorlib.com/etc/regform/colorlib-regform-7/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Mar 2026 07:14:57 GMT -->
+</html>

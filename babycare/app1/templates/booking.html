@@ -1,0 +1,52 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+    <script>
+        alert("{{ message }}")
+    </script>
+{% endfor %}
+{% endif %}
+        <!-- Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="p-5 bg-light rounded">
+                    <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px;">
+                        <h1 class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">Your Booking</h1>
+                        <h1 class="display-3"></h1>
+                        {% comment %} <p class="mb-5">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p> {% endcomment %}
+                    </div>
+                    <div class="row g-5 mb-5">
+                        
+                    </div>
+                    <div class="row">
+                    {% for i in bookings %}
+                    <div class="col-lg-4 mb-4">
+                    <div class="card p-3 shadow text-center">
+                        <img src="{{ i.service_provider.photo.url }}" class="img-fluid mb-3">
+                        <h4>{{ i.service_provider.name }}</h4>
+                        <p><b>Service:</b> {{ i.service_provider.service.title }}</p>
+                        <p><b>Price:</b> ₹{{ i.book_price }}</p>
+                        <p><b>City:</b> {{ i.book_city }}</p>
+                        <p><b>Date:</b> {{ i.datetime }}</p>
+                        <p><b>Status:</b> {% if i.transaction == 'True' %} 
+                                            <span class="text-success">Confirmed</span>
+                                        {% elif i.transaction == 'False' %} 
+                                            <span class="text-danger">Cancelled</span>  
+                                        {% else %} 
+                                            <span class="text-warning">Pending</span> 
+                                        {% endif %}</p>
+                    <div class="text-center"> <a href="{% url 'cancel_booking' i.id %}" class="btn btn-primary text-white px-4 py-2 mb-3 btn-border-radius">Cancel Booking</a> </div>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-center">No bookings found</p>
+                {% endfor %}
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- End -->
+
+{% endblock content%}

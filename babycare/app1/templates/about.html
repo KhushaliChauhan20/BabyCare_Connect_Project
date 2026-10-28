@@ -1,0 +1,71 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+        <!-- About Start -->
+        <div class="container-fluid py-5 about bg-light">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="video border">
+                            <button type="button" class="btn btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 wow fadeIn" data-wow-delay="0.3s">
+                        <h4 class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">About Us</h4>
+                        <h1 class="text-dark mb-4 display-5">We Are The Best Baby Care In Town</h1>
+                        <p class="text-dark mb-4">Our Childcare Service Platform connects parents with trusted childcare providers.
+                                                    Parents can easily browse available babysitters, daycare centers, and childcare services.
+                                                    Service providers can register, list their services, manage bookings, and track payments.
+                                                    The system is built using Django to ensure secure user authentication,
+                                                    efficient database management, and reliable service management.
+                        </p>
+                        <h3>Our Mission</h3>
+                        <p>
+                        To provide a reliable and secure platform that connects parents with trusted childcare providers and simplifies childcare service management.
+                        </p>
+
+                        <h3>Our Vision</h3>
+                        <p>
+                        To become a leading digital solution for childcare services by ensuring safety, accessibility, and convenience for families and service providers.
+                        </p>
+                        <div class="row mb-4">
+                            <div class="col-lg-6">
+                                <h6 class="mb-3"><i class="fas fa-check-circle me-2"></i>Safe Childcare Services</h6>
+                                <h6 class="mb-3"><i class="fas fa-check-circle me-2 text-primary"></i>Experienced Care Providers</h6>
+                                <h6 class="mb-3"><i class="fas fa-check-circle me-2 text-secondary"></i>Easy Online Booking</h6>
+                            </div>
+                            <div class="col-lg-6">
+                                <h6 class="mb-3"><i class="fas fa-check-circle me-2"></i>Secure Payment System</h6>
+                                <h6 class="mb-3"><i class="fas fa-check-circle me-2 text-primary"></i>Secure Payment System</h6>
+                                <h6><i class="fas fa-check-circle me-2 text-secondary"></i> Verified Service Providers</h6>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Video -->
+        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 16:9 aspect ratio -->
+                        <div class="ratio ratio-16x9">
+                            <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
+                                allow="autoplay"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+{% endblock content %}
